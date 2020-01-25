@@ -1,5 +1,5 @@
 package Domain;
 
 public interface Updateable {
-    void update_quality();
+    Integer update_quality();
 }

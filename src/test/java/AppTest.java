@@ -27,4 +27,24 @@ public class AppTest {
         assertEquals("5", elixir.getSell_in().toString());
         assertEquals("7", elixir.getQuality().toString());
     }
+
+    //Test métodos NormalItem
+
+    @Test
+    public void logicaNormalItem(){
+        NormalItem mongoose = new NormalItem("Elixir of the Mongoose", 5, 55);
+        NormalItem elixir = new NormalItem("Elixir of the Mongoose", 5, -15);
+        NormalItem elixir1 = new NormalItem("Elixir of the Mongoose", 5, 25);
+        NormalItem elixir2 = new NormalItem("Elixir of the Mongoose", 0, 25);
+
+
+        assertEquals("50", mongoose.setQuality(-1).toString());
+        assertEquals("0", elixir.setQuality(-1).toString());
+        elixir1.update_quality();
+        elixir2.update_quality();
+        assertEquals("4", elixir1.getSell_in().toString());
+        assertEquals("24", elixir1.getQuality().toString());
+        assertEquals("-1", elixir2.getSell_in().toString());
+        assertEquals("23", elixir2.getQuality().toString());
+    }
 }
