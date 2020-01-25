@@ -47,4 +47,18 @@ public class AppTest {
         assertEquals("-1", elixir2.getSell_in().toString());
         assertEquals("23", elixir2.getQuality().toString());
     }
+
+    @Test
+    public void logicaConjured() {
+        Conjured conjured = new Conjured("Conjured Mana Cake", 3, 6);
+        Conjured cake = new Conjured("Conjured Mana Cake", -2, 8);
+        Conjured mana = new Conjured("Conjured Mana Cake", -5, 3);
+
+        conjured.update_quality();
+        cake.update_quality();
+        mana.update_quality();
+        assertEquals("4", conjured.getQuality().toString());
+        assertEquals("4", cake.getQuality().toString());
+        assertEquals("0", mana.getQuality().toString());
+    }
 }
